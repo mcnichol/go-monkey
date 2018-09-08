@@ -374,7 +374,7 @@ func TestBooleanExpression(t *testing.T) {
 	}
 
 	if ident.Value != true {
-		t.Errorf("ident.Value not %s. got=%s", true, ident.Value)
+		t.Errorf("ident.Value not %t. got=%t", true, ident.Value)
 	}
 
 	if ident.TokenLiteral() != "true" {
