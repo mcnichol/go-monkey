@@ -501,16 +501,16 @@ func (p *Parser) peekTokenIs(t token.TokenType) bool {
 }
 
 func (p *Parser) peekPrecedence() int {
-	if p, ok := precedences[p.peekToken.Type]; ok {
-		return p
+	if tokenPrecedence, ok := precedences[p.peekToken.Type]; ok {
+		return tokenPrecedence
 	}
 
 	return LOWEST
 }
 
 func (p *Parser) curPrecedence() int {
-	if p, ok := precedences[p.curToken.Type]; ok {
-		return p
+	if tokenPrecedence, ok := precedences[p.curToken.Type]; ok {
+		return tokenPrecedence
 	}
 
 	return LOWEST
